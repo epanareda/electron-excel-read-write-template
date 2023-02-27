@@ -39,7 +39,34 @@ btn.addEventListener("click", () => {
     
     container.textContent = arr[2]["SECTION"];
 
-    const download_worksheet = XLSX.utils.json_to_sheet(arr.slice(2));
+    const download_worksheet = XLSX.utils.json_to_sheet(arr.slice(2),
+    {header: [
+        "REV CODE",
+        "SECTION",
+        "TASK NUMBER",
+        "SOURCE TASK REFERENCE",
+        "ACCESS",
+        "PREPARATION",
+        "ZONE",
+        "DESCRIPTION",
+        "SKILL CODE",
+        "TASK CODE",
+        "SAMPLE THRESHOLD",
+        "SAMPLE INTERVAL",
+        "100% THRESHOLD",
+        "100% INTERVAL",
+        "SOURCE",
+        "TCI",
+        "RSC",
+        "TPS",
+        "REFERENCE",
+        "MEN",
+        "TASKM.H.",
+        "ACCESSM.H.",
+        "PREP.M.H.",
+        "APPLICABILITY"
+    ]
+});
     const download_workbook = XLSX.utils.book_new();
 
     // XLSX.utils.book_append_sheet(download_workbook, download_worksheet, "First");
